@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title> JS + Regex</title>
+        <script>
+            function validate(str) {
+                if(str.match(/^\w{5,10}@[\w\.]{2,10}\.\w{2,6}$/i)) {
+                    document.getElementById("boton").disabled = false;
+
+                    document.getElementById("in").style.backgroundColor = 'blue';
+                    document.getElementById("in").style.color = 'white';
+                } else {
+                    document.getElementById("in").style.backgroundColor = 'red';
+                    document.getElementById("in").style.color = 'white';
+                }
+                console.log(str);
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" name="email"
+        onkeyup="validate(this.value)" id="in">
+
+        <input type="button" value="enviar"
+        disabled id="boton" onclick="alert('cool!')">
+    </body>
+</html>
